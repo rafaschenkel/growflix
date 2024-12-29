@@ -1,0 +1,138 @@
+:root {
+  --button-color: #e50914;
+  --button-hover-color: #aa161d;
+  --link-category-hover-color: #ff9100;
+  --dark-color: #000000;
+  --light-color: #ffffff;
+  --divider-color: #515c6f;
+  --accordion-bg-color: #303030;
+  --accordion-text-color: #ffffff;
+  --footer-color: #757575;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark-color);
+}
+
+/* CSS Index */
+
+.banner-index {
+  background: url("../assets/images/banner-initial.png") no-repeat top center
+    fixed;
+  background-size: cover;
+  background-color: #000000ff;
+}
+
+.btn-growflix {
+  background-color: var(--button-color);
+  color: var(--light-color);
+  font-size: 25px;
+  font-weight: 700;
+  padding: 20px 35px;
+}
+
+.btn:hover.btn-growflix {
+  background-color: var(--button-hover-color);
+  color: var(--light-color);
+}
+
+.btn:active.btn-growflix {
+  background-color: transparent;
+  border: 1px solid var(--button-color);
+  color: var(--button-color);
+}
+
+main {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+.divider-row {
+  border-bottom: 3px solid var(--divider-color);
+}
+.accordion {
+  --bs-accordion-border-width: 5px;
+  --bs-accordion-border-color: var(--dark-color);
+}
+
+.accordion-button {
+  --bs-accordion-btn-bg: var(--accordion-bg-color);
+  --bs-accordion-btn-color: var(--accordion-text-color);
+  padding: 25px;
+  font-size: 26px;
+
+  &::after {
+    --bs-accordion-btn-icon-width: 26px;
+    filter: brightness(0%) invert(100%);
+    background-image: url("../assets/libs/bootstrap-icons-1.11.3/plus-lg.svg");
+  }
+
+  &:not(.collapsed)::after {
+    background-image: url("../assets/libs/bootstrap-icons-1.11.3/x-lg.svg");
+  }
+
+  &:not(.collapsed) {
+    --bs-accordion-active-bg: var(--accordion-bg-color);
+    --bs-accordion-active-color: var(--accordion-text-color);
+  }
+}
+
+footer {
+  color: var(--footer-color);
+}
+
+/* CSS Home */
+
+.banner-home {
+  background: url("../assets/images/growcast-01.png") no-repeat top center;
+  background-size: cover;
+}
+
+.min-vh-60 {
+  min-height: 75vh;
+}
+
+.video-card {
+  --bs-card-bg: var(--dark-color);
+  border-radius: 0;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.video-card:hover {
+  position: absolute;
+  margin-top: -10px;
+  width: 300px;
+
+  & .video-card-body {
+    display: block;
+  }
+}
+
+.video-card-body {
+  cursor: pointer;
+  color: var(--light-color);
+  padding: 10px;
+  background-color: var(--dark-color);
+  display: none;
+}
+
+.link-category {
+  text-decoration: none;
+  color: var(--light-color);
+}
+
+.link-category:hover {
+  color: var(--link-category-hover-color);
+}
+
+.col-video {
+  min-height: 230px;
+}

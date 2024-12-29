@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Growflix - Todos os vídeos da Growdev em um só lugar.</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/libs/bootstrap-5.3.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/libs/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="container-fluid banner-home">
+      <div class="row">
+        <div class="col-12">
+          <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="./index.html"
+                ><img
+                  width="120"
+                  src="./assets/images/logo-growflix.svg"
+                  alt="Logo Growflix"
+              /></a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="./index.html"
+                      >Início</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="row min-vh-60">
+        <div class="container align-self-end">
+          <div class="col-12">
+            <div class="container">
+              <div class="row p-5">
+                <div class="col-12 py-5">
+                  <span class="text-uppercase fw-bold small text-light"
+                    >Podcast</span
+                  >
+                  <p class="text-uppercase fw-bold display-1 text-light">
+                    Growcast
+                  </p>
+                  <button
+                    class="btn btn-light fw-bold"
+                    id="btn-banner-growcast"
+                  >
+                    <i class="bi bi-play-fill"></i> Assistir
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="container-fluid">
+      <div class="row" id="cards-categories"></div>
+      <div class="divider-row"></div>
+    </main>
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 pt-5">
+                  <p>Dúvidas? Ligue 0800 591 8942</p>
+                </div>
+                <div class="col-6 col-md-3 pt-5">
+                  <p class="small">Perguntas frequentes</p>
+                  <p class="small">Relações com investidores</p>
+                  <p class="small">Formas de assistir</p>
+                  <p class="small">Informaões corporativas</p>
+                  <p class="small">Só na Growflix</p>
+                </div>
+                <div class="col-6 col-md-3 pt-5">
+                  <p class="small">Central de ajuda</p>
+                  <p class="small">Carreiras</p>
+                  <p class="small">Termos de uso</p>
+                  <p class="small">Entre em contato</p>
+                </div>
+                <div class="col-6 col-md-3 pt-5">
+                  <p class="small">Conta</p>
+                  <p class="small">Resgatar cartão pre-pago</p>
+                  <p class="small">Privacidade</p>
+                  <p class="small">Teste de velocidade</p>
+                </div>
+                <div class="col-6 col-md-3 pt-5">
+                  <p class="small">Media Center</p>
+                  <p class="small">Comprar cartão pre-pago</p>
+                  <p class="small">Preferências de cookies</p>
+                  <p class="small">Avisos legais</p>
+                </div>
+                <div class="col-12 py-5"><p>Growflix Growdev</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal Video-->
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content bg-transparent text-light">
+          <div class="modal-header d-flex justify-content-end">
+            <button
+              type="button"
+              class="btn text-light"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+          <div class="ratio ratio-21x9" id="iframe"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/libs/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/videos.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
