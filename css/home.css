@@ -1,0 +1,46 @@
+.banner-home {
+  background: url("../assets/images/growcast-01.png") no-repeat top center;
+  background-size: cover;
+}
+
+.row-home {
+  min-height: 680px;
+}
+
+.video-card {
+  --bs-card-bg: var(--dark-color);
+  border-radius: 0;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.video-card:hover {
+  position: absolute;
+  margin-top: -10px;
+  width: 300px;
+
+  & .video-card-body {
+    display: block;
+  }
+}
+
+.video-card-body {
+  cursor: pointer;
+  color: var(--light-color);
+  padding: 10px;
+  background-color: var(--dark-color);
+  display: none;
+}
+
+.link-category {
+  text-decoration: none;
+  color: var(--light-color);
+}
+
+.link-category:hover {
+  color: var(--link-category-hover-color);
+}
+
+.col-video {
+  min-height: 230px;
+}

@@ -1,0 +1,54 @@
+:root {
+  --button-color: #e50914;
+  --button-hover-color: #aa161d;
+  --link-category-hover-color: #ff9100;
+  --dark-color: #000000;
+  --light-color: #ffffff;
+  --divider-color: #515c6f;
+  --accordion-bg-color: #303030;
+  --accordion-text-color: #ffffff;
+  --footer-color: #757575;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark-color);
+}
+
+main {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+.divider-row {
+  border-bottom: 3px solid var(--divider-color);
+}
+
+footer {
+  color: var(--footer-color);
+}
+
+.btn-growflix {
+  background-color: var(--button-color);
+  color: var(--light-color);
+  font-size: 25px;
+  font-weight: 700;
+  padding: 20px 35px;
+}
+
+.btn:hover.btn-growflix {
+  background-color: var(--button-hover-color);
+  color: var(--light-color);
+}
+
+.btn:active.btn-growflix {
+  background-color: transparent;
+  border: 1px solid var(--button-color);
+  color: var(--button-color);
+}

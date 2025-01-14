@@ -1,0 +1,33 @@
+.banner-index {
+  background: url("../assets/images/banner-initial.png") no-repeat top center
+    fixed;
+  background-size: cover;
+  background-color: #000000ff;
+}
+
+.accordion {
+  --bs-accordion-border-width: 5px;
+  --bs-accordion-border-color: var(--dark-color);
+}
+
+.accordion-button {
+  --bs-accordion-btn-bg: var(--accordion-bg-color);
+  --bs-accordion-btn-color: var(--accordion-text-color);
+  padding: 25px;
+  font-size: 26px;
+
+  &::after {
+    --bs-accordion-btn-icon-width: 26px;
+    filter: brightness(0%) invert(100%);
+    background-image: url("../assets/libs/bootstrap-icons-1.11.3/plus-lg.svg");
+  }
+
+  &:not(.collapsed)::after {
+    background-image: url("../assets/libs/bootstrap-icons-1.11.3/x-lg.svg");
+  }
+
+  &:not(.collapsed) {
+    --bs-accordion-active-bg: var(--accordion-bg-color);
+    --bs-accordion-active-color: var(--accordion-text-color);
+  }
+}
