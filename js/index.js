@@ -34,10 +34,9 @@ function renderNavLinks() {
 }
 
 /**
- * Cria as categorias com cards
- * Itera sobre as categorias e cria um container com um título
- * e um link para cada uma delas, adicionando-os na div com id
- * "cards-categories"
+ * Renderiza as categorias
+ * Itera sobre as categorias e cria um link para cada uma delas,
+ * adicionando-os na section de categorias
  */
 
 function renderCardsCategories() {
@@ -48,18 +47,29 @@ function renderCardsCategories() {
 
     const divCategory = document.createElement("div");
     divCategory.classList.add("col-12", "pt-2", "pb-5");
-    divCategory.innerHTML = `
-        <div class="container">
-          <div class="row" id="${categoryFormated}">
-            <div class="col-12">
-              <a class="fw-bold fs-5 link-category" href="#${categoryFormated}">
-                ${category} <i class="bi bi-play-fill"></i>
-              </a>
-            </div>
-            
-          </div>
-        </div>
-    `;
+
+    const container = document.createElement("div");
+    container.classList.add("container");
+
+    const row = document.createElement("div");
+    row.classList.add("row");
+    row.setAttribute("id", categoryFormated);
+
+    const divCol = document.createElement("div");
+    divCol.classList.add("col-12");
+
+    const link = document.createElement("a");
+    link.classList.add("fw-bold", "fs-5", "link-category");
+    link.setAttribute("href", `#${categoryFormated}`);
+
+    const icon = document.createElement("i");
+    icon.classList.add("bi", "bi-play-fill");
+
+    divCategory.appendChild(container);
+    container.appendChild(row);
+    row.appendChild(divCol);
+    divCol.appendChild(link);
+    link.textContent = category + icon;
 
     cardsCategories.appendChild(divCategory);
   });
@@ -83,31 +93,50 @@ function renderCards() {
 }
 
 /**
- * Cria um card para um vídeo
- *
- * @param {Object} video - O vídeo que vai ser renderizado
- * @param {string} video.img - A imagem do vídeo
- * @param {string} video.title - O título do vídeo
- * @param {string} video.link - O link do vídeo
- * @param {string} video.category - A categoria do vídeo
- *
- * @returns {HTMLElement} O card do vídeo
+ * Cria um card de vídeo com a imagem, título e link
+ * do vídeo, e adiciona um evento de clique que abre o
+ * vídeo no modal
+ * @param {Object} video - objeto com as informações do vídeo
+ * @returns {HTMLElement} - o card de vídeo criado
  */
 
 function createCard(video) {
   const category = formatString(video.category);
   const id = `#${category}`;
+  const videoCard = document.createElement("div");
+  videoCard.classList.add("video-card");
+
+  const img = document.createElement("img");
+  img.src = video.img;
+  img.alt = `Imagem do video ${video.title}`;
+  img.classList.add("img-fluid");
+
+  const divLink = document.createElement("div");
+  divLink.classList.add("video-card-body", "text-light");
+
+  const divTitle = document.createElement("div");
+  divTitle.classList.add("d-flex", "align-items-center", "gap-2");
+
+  const icon = document.createElement("i");
+  icon.classList.add("bi", "bi-play-circle", "fs-1");
+
+  const title = document.createElement("span");
+  title.classList.add("text-light");
+  title.textContent = video.title;
 
   const card = document.createElement("div");
   card.classList.add("col-12", "col-sm-6", "col-md-4", "col-lg-3", "col-video");
-  card.innerHTML = `
-    <div class="video-card" id="${id}">
-      <img src="${video.img}" class="img-fluid" alt="Imagem do video ${video.title}" >
-      <div class="video-card-body text-light" onClick="openVideo('${video.link}')">
-        <p class="d-flex align-items-center gap-2"><i class="bi bi-play-circle fs-1"></i>${video.title}</p>
-      </div>
-    </div>
-  `;
+  card.appendChild(videoCard);
+  videoCard.setAttribute("id", id);
+  videoCard.appendChild(img);
+  videoCard.appendChild(divLink);
+  divLink.appendChild(divTitle);
+  divTitle.appendChild(icon);
+  divTitle.appendChild(title);
+
+  divLink.addEventListener("click", () => {
+    openVideo(video.link);
+  });
 
   return card;
 }
